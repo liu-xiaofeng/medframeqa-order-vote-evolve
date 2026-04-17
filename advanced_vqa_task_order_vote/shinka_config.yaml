@@ -1,0 +1,33 @@
+# ShinkaEvolve 配置：
+# - proposal 模型走 8000 上的 coder；
+# - embedding 模型走 8002；
+# - 本轮不改模型拓扑，只共享一个 8001 VLM 给评测使用；
+# - 这里显式覆盖成高预算但稳定的本地搜索设置，不再吃 package 默认 medium_budget。
+db:
+  num_islands: 5
+  archive_size: 40
+  num_archive_inspirations: 4
+  num_top_k_inspirations: 2
+  migration_interval: 10
+  migration_rate: 0.1
+  parent_selection_strategy: weighted
+evo:
+  num_generations: 50
+  llm_models:
+    - "local/cyankiwi/Qwen3-Coder-Next-AWQ-4bit@http://localhost:8000/v1"
+  embedding_model: "local/BAAI/bge-m3@http://localhost:8002/v1"
+  max_patch_attempts: 3
+  max_patch_resamples: 3
+  patch_types:
+    - diff
+    - full
+  patch_type_probs:
+    - 0.85
+    - 0.15
+  llm_kwargs:
+    temperatures:
+      - 0.0
+      - 0.4
+      - 0.8
+    max_tokens: 8192
+  use_text_feedback: true

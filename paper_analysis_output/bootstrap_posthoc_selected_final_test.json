@@ -1,0 +1,36 @@
+[
+  {
+    "method_a": "order_vote",
+    "method_b": "fixed",
+    "run_dir_a": "/gluon4/xl693/evolve/results/advanced_vqa_task_order_vote_20260331_145437_repeat02",
+    "run_dir_b": "/gluon4/xl693/evolve/results/advanced_vqa_task_fixed_20260331_110628_repeat02",
+    "eval_name": "posthoc_selected_final_test",
+    "accuracy_a": 0.5871345029239766,
+    "accuracy_b": 0.5216374269005848,
+    "diff_a_minus_b": 0.06549707602339183,
+    "ci_low": 0.03274853801169586,
+    "ci_high": 0.09941520467836262,
+    "win_rate_a_gt_b": 1.0,
+    "win_rate_a_ge_b": 1.0,
+    "p_two_sided": 0.0,
+    "num_questions": 855,
+    "num_bootstrap": 10000
+  },
+  {
+    "method_a": "order_vote",
+    "method_b": "order_rerank",
+    "run_dir_a": "/gluon4/xl693/evolve/results/advanced_vqa_task_order_vote_20260331_145437_repeat02",
+    "run_dir_b": "/gluon4/xl693/evolve/results/advanced_vqa_task_order_rerank_20260331_190226_repeat02",
+    "eval_name": "posthoc_selected_final_test",
+    "accuracy_a": 0.5871345029239766,
+    "accuracy_b": 0.5567251461988304,
+    "diff_a_minus_b": 0.03040935672514622,
+    "ci_low": 0.011695906432748537,
+    "ci_high": 0.05029239766081872,
+    "win_rate_a_gt_b": 0.9983,
+    "win_rate_a_ge_b": 0.9986,
+    "p_two_sided": 0.0034,
+    "num_questions": 855,
+    "num_bootstrap": 10000
+  }
+]

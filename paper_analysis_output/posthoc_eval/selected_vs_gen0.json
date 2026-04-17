@@ -1,0 +1,47 @@
+[
+  {
+    "method": "fixed",
+    "run_dir": "/gluon4/xl693/evolve/results/advanced_vqa_task_fixed_20260331_110628_repeat02",
+    "selected_generation": 41,
+    "selected_final_test_score": 0.5216374269005848,
+    "gen0_generation": 0,
+    "gen0_final_test_score": 0.52046783625731,
+    "delta_selected_minus_gen0": 0.0011695906432748204
+  },
+  {
+    "method": "reasoning",
+    "run_dir": "/gluon4/xl693/evolve/results/advanced_vqa_task_reasoning_20260329_130634_repeat01",
+    "selected_generation": 18,
+    "selected_final_test_score": 0.5169590643274854,
+    "gen0_generation": 0,
+    "gen0_final_test_score": 0.5181286549707602,
+    "delta_selected_minus_gen0": -0.0011695906432748204
+  },
+  {
+    "method": "order_vote",
+    "run_dir": "/gluon4/xl693/evolve/results/advanced_vqa_task_order_vote_20260331_145437_repeat02",
+    "selected_generation": 21,
+    "selected_final_test_score": 0.5871345029239766,
+    "gen0_generation": 0,
+    "gen0_final_test_score": 0.5766081871345029,
+    "delta_selected_minus_gen0": 0.010526315789473717
+  },
+  {
+    "method": "order_rerank",
+    "run_dir": "/gluon4/xl693/evolve/results/advanced_vqa_task_order_rerank_20260331_190226_repeat02",
+    "selected_generation": 26,
+    "selected_final_test_score": 0.5567251461988304,
+    "gen0_generation": 0,
+    "gen0_final_test_score": 0.5578947368421052,
+    "delta_selected_minus_gen0": -0.0011695906432748204
+  },
+  {
+    "method": "order_vote_plus",
+    "run_dir": "/gluon4/xl693/evolve/results/advanced_vqa_task_order_vote_plus_20260329_185134_repeat01",
+    "selected_generation": 16,
+    "selected_final_test_score": 0.5590643274853802,
+    "gen0_generation": 0,
+    "gen0_final_test_score": 0.5333333333333333,
+    "delta_selected_minus_gen0": 0.025730994152046827
+  }
+]

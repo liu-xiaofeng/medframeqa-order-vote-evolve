@@ -1,0 +1,131 @@
+{
+  "started_at": "2026-04-01 09:54:01",
+  "cwd": "/gluon4/xl693/evolve",
+  "args": {
+    "stage": "optional_budget_ablation",
+    "resume_from": null,
+    "skip_budget_ablation": false,
+    "dry_run": false
+  },
+  "profiles": {
+    "main_pipeline": "paper_rigorous_local",
+    "budget_ablation": "order_vote_budget100",
+    "definitions": {
+      "paper_rigorous_local": {
+        "description": "论文主流程：更大的 search_mini、更密的 pool 复评、5-island 稳定高预算搜索。",
+        "method_overrides": {},
+        "shinka_set_overrides": {
+          "db.num_islands": "5",
+          "db.archive_size": "40",
+          "db.num_archive_inspirations": "4",
+          "db.num_top_k_inspirations": "2",
+          "db.migration_interval": "10",
+          "db.migration_rate": "0.1",
+          "db.parent_selection_strategy": "weighted",
+          "evo.max_patch_attempts": "3",
+          "evo.max_patch_resamples": "3",
+          "evo.patch_types": "[\"diff\",\"full\"]",
+          "evo.patch_type_probs": "[0.85,0.15]",
+          "evo.llm_kwargs": "{\"temperatures\":[0.0,0.4,0.8],\"max_tokens\":8192}",
+          "evo.use_text_feedback": "true"
+        }
+      },
+      "order_vote_budget100": {
+        "description": "只对 order_vote 做 100 generations 的预算敏感性分析。",
+        "method_overrides": {
+          "order_vote": {
+            "num_generations": 100,
+            "search_mini_size": "256",
+            "pool_reeval_gens": "10,20,30,40,49"
+          }
+        },
+        "shinka_set_overrides": {
+          "db.num_islands": "5",
+          "db.archive_size": "40",
+          "db.num_archive_inspirations": "4",
+          "db.num_top_k_inspirations": "2",
+          "db.migration_interval": "10",
+          "db.migration_rate": "0.1",
+          "db.parent_selection_strategy": "weighted",
+          "evo.max_patch_attempts": "3",
+          "evo.max_patch_resamples": "3",
+          "evo.patch_types": "[\"diff\",\"full\"]",
+          "evo.patch_type_probs": "[0.85,0.15]",
+          "evo.llm_kwargs": "{\"temperatures\":[0.0,0.4,0.8],\"max_tokens\":8192}",
+          "evo.use_text_feedback": "true"
+        }
+      }
+    }
+  },
+  "stage_order": [
+    "preflight",
+    "main5_once",
+    "recover_main5_paper_eval",
+    "posthoc_validate_main5",
+    "paper_analyze_main5",
+    "core_repeats",
+    "posthoc_validate_all",
+    "paper_analyze_all",
+    "optional_budget_ablation"
+  ],
+  "stages": {
+    "optional_budget_ablation": {
+      "status": "completed",
+      "started_at": "2026-04-01 09:54:01",
+      "ended_at": "2026-04-01 15:46:57",
+      "details": {
+        "executed": true,
+        "results_root": "/gluon4/xl693/evolve/results_budget_ablation",
+        "new_run_dirs": [
+          "/gluon4/xl693/evolve/results_budget_ablation/advanced_vqa_task_order_vote_budget100_20260401_095401"
+        ],
+        "ablation_run": "/gluon4/xl693/evolve/results_budget_ablation/advanced_vqa_task_order_vote_budget100_20260401_095401",
+        "ablation_final_test_score": 0.560233918128655,
+        "current_order_vote_mean_final_test_score": 0.5789473684210527,
+        "delta_vs_50gen_mean": -0.018713450292397682,
+        "appendix_budget_sensitive": false,
+        "keep_main_budget_at_50": true,
+        "profile": "order_vote_budget100",
+        "effective_method_spec": {
+          "task_dir": "advanced_vqa_task_order_vote",
+          "task_name": "advanced_vqa_task_order_vote",
+          "search_mini_size": "256",
+          "pool_reeval_gens": "10,20,30,40,49",
+          "api_timeout": "30",
+          "num_generations": 100,
+          "max_proposal_jobs": 4,
+          "max_evaluation_jobs": 1
+        }
+      }
+    }
+  },
+  "new_run_dirs": {},
+  "core_run_targets": {},
+  "order_vote_plus_gate": {},
+  "budget_ablation": {
+    "executed": true,
+    "results_root": "/gluon4/xl693/evolve/results_budget_ablation",
+    "new_run_dirs": [
+      "/gluon4/xl693/evolve/results_budget_ablation/advanced_vqa_task_order_vote_budget100_20260401_095401"
+    ],
+    "ablation_run": "/gluon4/xl693/evolve/results_budget_ablation/advanced_vqa_task_order_vote_budget100_20260401_095401",
+    "ablation_final_test_score": 0.560233918128655,
+    "current_order_vote_mean_final_test_score": 0.5789473684210527,
+    "delta_vs_50gen_mean": -0.018713450292397682,
+    "appendix_budget_sensitive": false,
+    "keep_main_budget_at_50": true,
+    "profile": "order_vote_budget100",
+    "effective_method_spec": {
+      "task_dir": "advanced_vqa_task_order_vote",
+      "task_name": "advanced_vqa_task_order_vote",
+      "search_mini_size": "256",
+      "pool_reeval_gens": "10,20,30,40,49",
+      "api_timeout": "30",
+      "num_generations": 100,
+      "max_proposal_jobs": 4,
+      "max_evaluation_jobs": 1
+    }
+  },
+  "ended_at": "2026-04-01 15:46:57",
+  "status": "completed"
+}

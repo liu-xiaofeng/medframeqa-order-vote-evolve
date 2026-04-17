@@ -1,0 +1,6 @@
+best_generation,best_search_score,final_test_correct,final_test_score,final_test_size,invalid_generation_rate,last_generation,last_search_score,method,paper_ready_candidate,run_dir,selected_generation,selected_holdout_correct,selected_holdout_score,selected_holdout_size,selected_vlm_call_count,selected_wall_time_sec,valid_generation_rate
+13,0.5859375,449,0.5251461988304094,855,0.02,49,0.5859375,fixed,True,/gluon4/xl693/evolve/results/advanced_vqa_task_fixed_20260328_160223,45,358,0.5383458646616541,665,128,31.527,0.98
+21,0.609375,448,0.5239766081871345,855,0.0,49,0.6015625,reasoning,True,/gluon4/xl693/evolve/results/advanced_vqa_task_reasoning_20260328_190959,3,355,0.5338345864661654,665,128,33.017,1.0
+17,0.609375,448,0.5239766081871345,855,0.0,49,0.5859375,order_vote,True,/gluon4/xl693/evolve/results/advanced_vqa_task_order_vote_plus_20260328_224122,20,374,0.562406015037594,665,293,66.244,1.0
+32,0.609375,479,0.560233918128655,855,0.04,49,0.59375,order_rerank,True,/gluon4/xl693/evolve/results/advanced_vqa_task_order_rerank_20260328_172410,32,389,0.5849624060150376,665,160,36.302,0.96
+17,0.609375,448,0.5239766081871345,855,0.0,49,0.5859375,order_vote_plus,True,/gluon4/xl693/evolve/results/advanced_vqa_task_order_vote_plus_20260328_224122,20,374,0.562406015037594,665,293,66.244,1.0
